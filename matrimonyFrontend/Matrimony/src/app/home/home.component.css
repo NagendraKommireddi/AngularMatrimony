@@ -1,0 +1,26 @@
+.background{
+     background-image:url("https://s-i.huffpost.com/gen/1965711/images/o-FAMILY-WEDDINGS-facebook.jpg")
+    
+    }
+.ey
+ {
+  display:inline-block;
+ } 
+form{
+    display:inline-block;
+}
+.example-form {
+min-width: 150px;
+max-width: 500px;
+width: 80%;
+  }
+  .example-full-width{
+      width: 40%;
+  }
+  .container{
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

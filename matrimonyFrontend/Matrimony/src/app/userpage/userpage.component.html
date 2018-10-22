@@ -1,0 +1,187 @@
+<section class=header>
+  <mat-toolbar style="background:rgb(240, 107, 129)" >
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSD-BPr8-Gk7hguYOcEwvMKoEgizyG0GBrpOXuiI7ZSiitB1Y" width="50px" height="50px">
+      <div>
+        <h4>
+         Matrimony
+      </h4>
+       </div>
+       <div style="margin-left: 40px ">
+         </div>  <!-- <button  mat-button [matMenuTriggerFor]="menu">Menu</button>
+           <mat-menu #menu="matMenu"> -->
+      <!--62-->    <!-- <div > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('home')" > Home </button>
+            </div> -->
+            <div > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('register')" >Register</button>
+            </div> 
+            <div > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('preference')" > Preference </button>
+            </div>
+            <div > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('payment')" > Payment </button>
+            </div>
+              <!-- </mat-menu> -->
+           <!-- </div>      -->
+      <!-- <mat-menu #menu="matMenu">
+          <a mat-menu-item routerLink="/home">Home</a>
+          <a mat-menu-item routerLink="/register">Register</a>  
+          <a mat-menu-item routerLink="/preference">PartnerPreferences</a> 
+          <a mat-menu-item routerLink="/payment">Payment</a>     
+        </mat-menu> -->
+       <button matBadge='{{badgenumber}}' matBadgeOverlap="true" (click)="notify()"  mat-button >Likes</button>
+      <button style="margin-left: 620px"  mat-button [matMenuTriggerFor]="UpdateProfile">
+          {{name}}<mat-icon>account_box keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #UpdateProfile="matMenu">
+        <a mat-menu-item routerLink="/register">UpdateProfile</a>
+        <!-- <a mat-menu-item routerLink="/payment">Packages</a> -->
+        <button  mat-button (click)="upload()" >UploadImages</button>
+        <a mat-menu-item routerLink="/home" (click)="logout()">Logout</a>    
+      </mat-menu>
+          
+  </mat-toolbar>
+</section>
+
+
+<mat-sidenav-container  >
+    <mat-sidenav style="height: 1000px;" mode="side" opened>
+        <mat-accordion>
+            <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Marrital Status
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <!-- <mat-radio-group dense [(ngModel)]="selection['MaritalStatus']" (selectionChange)="listchange(marritalStatus.selectedOptions.selected,'MaritalStatus');handleSelection($event)"  single="true" #marritalStatus> -->        
+                <mat-selection-list dense [(ngModel)]="selection['MaritalStatus']" (selectionChange)="listchange(marritalStatus.selectedOptions.selected,'MaritalStatus')" #marritalStatus>
+                  <mat-list-option *ngFor="let status of marritalStatusArr" [value]='status'>{{ status | remodel }}<br></mat-list-option> 
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)='clearAllOptions(marritalStatus)'>ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Mother Tongue
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list dense [(ngModel)]="selection['MotherTongue']" (selectionChange)="listchange(motherTongue.selectedOptions.selected,'MotherTongue')" #motherTongue>
+                  <mat-list-option *ngFor="let lang of motherTongueArr" [value]='lang'>{{ lang | remodel }}</mat-list-option>
+                </mat-selection-list>
+                <!-- <pre>------{{selection|json}}</pre> -->
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(motherTongue)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              
+              <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Physically Handicapped
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list dense [(ngModel)]="selection['PhysicallyHandicapped']" (selectionChange)="listchange(physicallyHandicapped.selectedOptions.selected,'PhysicallyHandicapped')" #physicallyHandicapped>
+                  <mat-list-option *ngFor="let option of physicallyHandicappedArr" [value]='option'>{{ option | remodel }}</mat-list-option>
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(physicallyHandicapped)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              
+              <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Eating Habit</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list dense  [(ngModel)]="selection['Diet']" (selectionChange)="listchange(diet.selectedOptions.selected,'Diet')" #diet>
+                  <mat-list-option *ngFor="let option of dietArr" [value]='option'>{{ option | remodel  }}</mat-list-option>
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(diet)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              
+              <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Drinking Habit</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list dense [(ngModel)]="selection['DrinkingHabit']" (selectionChange)="listchange(drinkingHabit.selectedOptions.selected,'DrinkingHabit')" #drinkingHabit>
+                  <mat-list-option *ngFor="let option of drinkingHabitArr" [value]='option'>{{ option | remodel }}</mat-list-option>
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(drinkingHabit)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              
+              <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Smoking Habit</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list [(ngModel)]="selection['SmokingHabit']" dense (selectionChange)="listchange(smokingHabit.selectedOptions.selected,'SmokingHabit')" #smokingHabit>
+                  <mat-list-option *ngFor="let option of smokingHabitArr" [value]='option'>{{ option | remodel }}</mat-list-option>
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(smokingHabit)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              
+              <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header  >
+                  <mat-panel-title  >Body Type</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list dense [(ngModel)]="selection['BodyType']" (selectionChange)="listchange(bodyType.selectedOptions.selected,'BodyType')" #bodyType>
+                  <mat-list-option *ngFor="let option of bodyTypeArr" [value]='option'>{{ option | remodel }}</mat-list-option>
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(bodyType)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+              
+              <!-- <mat-expansion-panel expanded="true" class="exp-panel-width">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Skin Type</mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-selection-list dense (selectionChange)= "listchange(skinType.selectedOptions.selected,'skinType')" #skinType>
+                  <mat-list-option *ngFor="let option of skinTypeArr" [value]='option'>{{ option | remodel }}</mat-list-option>
+                </mat-selection-list>
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="clearAllOptions(skinType)">ClearAll</button>
+                </mat-action-row>
+              </mat-expansion-panel>
+               -->
+          </mat-accordion>
+    </mat-sidenav>
+    <mat-sidenav-content style="height: 550px;">
+        <mat-card   *ngFor="let user of users" class="person-card" >
+            <mat-grid-list  cols="8" rowHeight="3:1" style="background-color: lightblue;" >
+              <mat-grid-tile [rowspan]="4" [colspan]="2">
+                
+                <div style="display: block">
+                    <img [src]="user.Image" style="height: 100px;width: 100px" /><br><br>
+                    <button  mat-raised-button color="primary" (click)="show(user.Name)" >
+                        Show More Images                
+                    </button>
+                </div>                
+              </mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2">Profilefor:{{user.Profilefor}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2"> Name: {{user.Name}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2" > DOB:{{user.DOB}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2" >EmailId: {{user.EmailId}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2">Gender:{{user.Gender}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2"> MotherTongue:{{user.MotherTongue}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2" >Phone:  {{user.Phone}}</mat-grid-tile>
+              <mat-grid-tile [rowspan]="1" [colspan]="2">Religion: {{user.Religion}}</mat-grid-tile>
+                <!-- <mat-grid-tile [colspan]="2">Salary</mat-grid-tile>
+                <mat-grid-tile [colspan]="2">Mother Tongue</mat-grid-tile>
+                <mat-grid-tile [colspan]="2">Marrital Status</mat-grid-tile>
+                -->
+            <mat-grid-tile [rowspan]="1" [colspan]="6">
+                <button mat-raised-button color="primary" (click)="sendemail(user.EmailId,user.Phone)" >Like</button>
+            </mat-grid-tile>
+            </mat-grid-list>
+            <!-- <mat-card>
+            </mat-card> -->
+          </mat-card>
+          <!-- <<button mat-raised-button color="primary" (click)="sendemail(user.EmailId)" >Like</button> -->
+    
+        </mat-sidenav-content>
+         
+      </mat-sidenav-container>

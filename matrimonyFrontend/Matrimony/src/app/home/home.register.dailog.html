@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>Hi</h1>
+<div mat-dialog-content>
+            <mat-form-field>
+                        <mat-select placeholder="ProfileFor">
+                        <mat-option value="Myself">Myself</mat-option>
+                        <mat-option value="Daughter">Daughter</mat-option>
+                        <mat-option value="Son">Son</mat-option>
+                        <mat-option value="Brother">Brother</mat-option>
+                        <mat-option value="Sister">Sister</mat-option>
+                        <mat-option value="Relative">Relative</mat-option>
+                        <mat-option value="Friend">Friend</mat-option>  
+                        </mat-select>
+            </mat-form-field>
+  <br>
+  <mat-form-field>
+       <input matInput placeholder="Name">
+  </mat-form-field>
+      <mat-form-field>
+            <mat-select placeholder="Gender">
+            <mat-option value="Male">M</mat-option>
+            <mat-option value="Female">F</mat-option>  
+            </mat-select>
+      </mat-form-field>
+  <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="DoB">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+            <mat-select placeholder="Religion">
+            <mat-option value="Hindu">Hindu</mat-option>
+            <mat-option value="Muslim-Shia">Muslim-Shia</mat-option>
+            <mat-option value="Muslim-Sunni">Muslim-Sunni</mat-option>
+            <mat-option value="Muslim-Others">Muslim-Others</mat-option>
+            <mat-option value="Christian">Christian</mat-option>
+            <mat-option value="Sikh">Sikh</mat-option>
+            <mat-option value="Jain-Digambar">Jain-Digambar</mat-option>
+            <mat-option value="Jain-Shwethambar">Jain-Shwethambar</mat-option>
+            <mat-option value="Jain-Others">Jain-Others</mat-option>
+            <mat-option value="Parsi">Parsi</mat-option>
+            <mat-option value="Budhist">Budhist</mat-option>
+            <mat-option value="Inter-Religion">Inter-Religion</mat-option>  
+            </mat-select>
+</mat-form-field>
+  <mat-form-field>
+            <mat-select placeholder="Mother-Tongue" >
+                  <mat-option *ngFor="let language of languages" value="language.value">{{language.viewValue}}</mat-option>
+            </mat-select>
+  </mat-form-field>
+  <mat-form-field>    
+        <input matInput placeholder="Phone">
+  </mat-form-field>
+  <mat-form-field>
+        <input matInput placeholder="EmailID">
+  </mat-form-field>
+  <mat-form-field>
+        <input matInput placeholder="Password">
+  </mat-form-field>
+ <!-- <mat-form-field>
+            <input matInput placeholder="ConfirmPassword">
+      </mat-form-field>-->
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] cdkFocusInitial (click)="onNoClick()">cancel</button>
+  <a routerLink="register/" routerLinkActive="active"  ><button mat-button (click)="Submit()" [mat-dialog-close]>Submit</button></a>
+</div>

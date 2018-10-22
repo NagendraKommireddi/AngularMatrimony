@@ -1,0 +1,880 @@
+    <!-- <mat-horizontal-stepper  #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Persional and Professional Detials</ng-template>
+            <mat-grid-list cols="1" rowHeight="50px">
+                    <mat-grid-tile>
+                        MaritalStatus:&nbsp;
+                            <mat-radio-group id="maritalstatus" >
+                                <mat-radio-button  value="NeverMarried">NeverMarried</mat-radio-button>&nbsp;
+                                <mat-radio-button value="Widowed">Widowed</mat-radio-button>
+                                <mat-radio-button value="Divorced">Divorced</mat-radio-button>
+                                <mat-radio-button value="AwatingDivorce">AwatingDivorce</mat-radio-button>
+                            </mat-radio-group>
+                            {{favoriteSeason}}
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            Height:
+                            <mat-form-field >
+                                    <mat-select placeholder="Select" >
+                                          <mat-option *ngFor="let Height of Heights" value="Height.value">{{Height.viewValue}}</mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            FamilyStatus:
+                            <mat-form-field>
+                                <mat-select placeholder="Select" >
+                                        <mat-option value="MiddleClass">MiddleClass</mat-option>
+                                        <mat-option value="AboveMiddleClass">AboveMiddleClass</mat-option>
+                                        <mat-option value="Rich">Rich</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            FamilyType:&nbsp;
+                            <mat-radio-group >
+                                <mat-radio-button value="Joint">Joint</mat-radio-button>
+&nbsp;                                <mat-radio-button value="Neutral">Neutral</mat-radio-button>
+                            </mat-radio-group>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            FamilyValues:&nbsp;
+                            <mat-radio-group >
+                                <mat-radio-button value="Orthodox">Orthodox</mat-radio-button>&nbsp;
+                                <mat-radio-button value="Traditional">Traditional</mat-radio-button>
+                                <mat-radio-button value="Moderate">Moderate</mat-radio-button>
+                                <mat-radio-button value="Liberal">Liberal</mat-radio-button>
+                            </mat-radio-group>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            Any Disability:&nbsp;
+                            <mat-radio-group >
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>&nbsp;
+                                <mat-radio-button value="No">No</mat-radio-button>    
+                            </mat-radio-group>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            Education:
+                            <mat-form-field>
+                                <mat-select placeholder="Select" >
+                                        <mat-option value="B.E">B.E</mat-option>
+                                        <mat-option value="B.Tech">B.Tech</mat-option>
+                                        <mat-option value="B.Sc">B.Sc</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            Employed In:&nbsp;
+                            <mat-radio-group >
+                                <mat-radio-button value="Private">Private</mat-radio-button>&nbsp;
+                                <mat-radio-button value="Government">Government</mat-radio-button>
+                                <mat-radio-button value="Business">Business</mat-radio-button>
+                                <mat-radio-button value="Self-Employed">Self-Employed</mat-radio-button>
+                            </mat-radio-group>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            Occupation:
+                            <mat-form-field>
+                                <mat-select placeholder="Select" >
+                                        <mat-option value="SoftwareProfessional">SoftwareProfessional</mat-option>
+                                        <mat-option value="FinanceProfessional">FinanceProfessional</mat-option>
+                                        <mat-option value="Lecturer">Lecturer</mat-option>
+                                </mat-select> 
+                            </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            AnnualIncome:
+                            <mat-form-field>
+                                <mat-select placeholder="Select" >
+                                        <mat-option value="0-1lakhs">0-1lakhs</mat-option>
+                                        <mat-option value="1-2lakhs">1-2lakhs</mat-option>
+                                        <mat-option value="2-3lakhs">2-3lakhs</mat-option>
+                                </mat-select> 
+                            </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                            Work Location:
+                            <mat-form-field>
+                                <mat-select placeholder="Select" >
+                                        <mat-option value="India">India</mat-option>
+                                        <mat-option value="Usa">Usa</mat-option>
+                                        <mat-option value="China">India</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            <mat-form-field>
+                                    <mat-select placeholder="Select" >
+                                        <mat-option value="AndhraPradesh">AndhraPradesh</mat-option>
+                                        <mat-option value="Maharashtra">Gujarat</mat-option>
+                                        <mat-option value="Canada">Canada</mat-option>
+                                        <mat-option value="NewYork">NewYork</mat-option>
+                                        <mat-option value="Shandong">Shandong</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                            <mat-form-field>
+                                    <mat-select placeholder="Select" >
+                                        <mat-option value="Vijayawada">Vijayawada</mat-option>
+                                        <mat-option value="Mumbai">Mumbai</mat-option>
+                                        <mat-option value="Toronto">Toronto</mat-option>
+                                        <mat-option value="Binghamton">Binghamton</mat-option>
+                                        <mat-option value="Yantai">Yantai</mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                    </mat-grid-tile>                    
+                  </mat-grid-list>
+         <div style="text-align: center;">
+              <button mat-raised-button color="primary">Save</button>
+              <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div></form><br><br>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>BasicInformation</ng-template>
+            <mat-grid-list cols="1" rowHeight="50px">
+                <mat-grid-tile>
+                        BodyType:&nbsp;
+                        <mat-radio-group >
+                            <mat-radio-button value="Slim">Slim</mat-radio-button>&nbsp;
+                            <mat-radio-button value="Athletic">Athletic</mat-radio-button>
+                            <mat-radio-button value="Heavy">Heavy</mat-radio-button>
+                        </mat-radio-group>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        Weight:
+                        <mat-form-field>
+                            <input matInput placeholder="Weight">
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        Education:
+                        <mat-form-field>
+                            <input matInput placeholder="Education">
+                        </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        Occupation:
+                        <mat-form-field>
+                            <input matInput placeholder="Occupation">
+                        </mat-form-field>            
+                </mat-grid-tile>
+               
+                <mat-grid-tile>
+                        Eating:&nbsp;
+                        <mat-radio-group >
+                            <mat-radio-button value="Vegeterian">Vegeterian</mat-radio-button>&nbsp;
+                            <mat-radio-button value="Non-Vegeterian">Non-Vegeterian</mat-radio-button>
+                            <mat-radio-button value="Eggeterian">Eggeterian</mat-radio-button>
+                        </mat-radio-group>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        Smoking:&nbsp;
+                        <mat-radio-group >
+                            <mat-radio-button value="Never">Never</mat-radio-button>&nbsp;
+                            <mat-radio-button value="Socially">Socially</mat-radio-button>
+                            <mat-radio-button value="Always">Always</mat-radio-button>
+                        </mat-radio-group>
+                </mat-grid-tile>
+               <mat-grid-tile>
+                    Drinking:&nbsp;
+                <mat-radio-group >
+                    <mat-radio-button value="Never">Never</mat-radio-button>&nbsp;
+                    <mat-radio-button value="Socially">Socially</mat-radio-button>
+                    <mat-radio-button value="Always">Always</mat-radio-button>
+                </mat-radio-group>
+               </mat-grid-tile>
+               <mat-grid-tile>
+       
+                    Star:
+                    <mat-form-field>
+                        <mat-select placeholder="Star"  >
+                                <mat-option *ngFor ="let star of Stars" value="star.value">{{star.viewValue}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>    
+               </mat-grid-tile>
+               <mat-grid-tile>
+                    Rasi:
+                    <mat-form-field>
+                        <mat-select placeholder="Rasi"  >
+                                <mat-option *ngFor ="let rasi of Rasichakra" value="rasi.value">{{rasi.viewValue}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                  <br><br>
+               </mat-grid-tile>
+               <mat-grid-tile>
+                 HoroScope Details:-
+                    Time of Birth:
+                    &nbsp;
+                    <mat-form-field>
+                        <input matInput type="time" >
+                    </mat-form-field>
+               </mat-grid-tile>
+                <br><br>
+                <mat-grid-tile>
+                        Place of Birth:
+                        &nbsp;
+                        <mat-form-field>
+                            <mat-select placeholder="Country" >
+                                    <mat-option value="India">India</mat-option>
+                                    <mat-option value="Usa">Usa</mat-option>
+                                    <mat-option value="China">India</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    <mat-form-field>
+                            <mat-select placeholder="States" >
+                                <mat-option value="AndhraPradesh">AndhraPradesh</mat-option>
+                                <mat-option value="Maharashtra">Gujarat</mat-option>
+                                <mat-option value="Canada">Canada</mat-option>
+                                <mat-option value="NewYork">NewYork</mat-option>
+                                <mat-option value="Shandong">Shandong</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                    <mat-form-field>
+                            <mat-select placeholder="City" >
+                                <mat-option value="Vijayawada">Vijayawada</mat-option>
+                                <mat-option value="Mumbai">Mumbai</mat-option>
+                                <mat-option value="Toronto">Toronto</mat-option>
+                                <mat-option value="Binghamton">Binghamton</mat-option>
+                                <mat-option value="Yantai">Yantai</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+               </mat-grid-tile>
+            </mat-grid-list>
+            <div style="margin-left: 500px">
+                <button mat-raised-button color="primary">Save</button>
+              <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+              <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div><br><br><br>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Family Information</ng-template>
+          <mat-grid-list cols="1" rowHeight="50px">
+              <mat-grid-tile>
+                    Father Occupation:
+                    <mat-form-field>
+                        <mat-select placeholder="Select" >
+                        <mat-option value="Employed">Employed</mat-option>
+                        <mat-option value="UnEmployed">UnEmployed</mat-option>
+                        <mat-option value="Business">Business</mat-option>
+                        <mat-option value="Agriculture">Agriculture</mat-option>
+                        <mat-option value="Self-Employed">Self-Employed</mat-option>
+                  </mat-select>
+                  </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                    Mother Occupation:
+                    <mat-form-field>
+                        <mat-select placeholder="Select" >
+                        <mat-option value="Home-Maker">Home-Maker</mat-option>
+                        <mat-option value="Employed">Employed</mat-option>
+                        <mat-option value="UnEmployed">UnEmployed</mat-option>
+                        <mat-option value="Business">Business</mat-option>
+                        <mat-option value="Agriculture">Agriculture</mat-option>
+                        <mat-option value="Self-Employed">Self-Employed</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                    Brothers:
+                    <mat-form-field>
+                        <mat-select placeholder="Select" >
+                                <mat-option value="none">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+              </mat-grid-tile>
+            <mat-grid-tile>
+                    Brothers Married:
+                    <mat-form-field>
+                        <mat-select placeholder="Select" >
+                                <mat-option value="none">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    Sisters:
+                    <mat-form-field>
+                        <mat-select placeholder="Select" >
+                                <mat-option value="0">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    Sisters Married:
+                    <mat-form-field>
+                        <mat-select placeholder="Select" >
+                                <mat-option value="0">0</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    Parents Contact:
+                    <mat-form-field>
+                        <input matInput placeholder="PhoneNo">
+                    </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                    Ancestral Origin:
+                <mat-form-field>
+                    <input matInput placeholder="Place">
+                </mat-form-field>  
+            </mat-grid-tile>
+          </mat-grid-list>
+          <div>
+             <button mat-raised-button color="primary" (click)="redirect()" >Save&Submit</button> 
+            <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+ -->
+
+
+ <section style="padding-top: 30px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <mat-horizontal-stepper #stepper   >
+                <mat-step>
+                  <ng-template matStepLabel>Pictures</ng-template>
+                 <div>
+                  <table cellpadding='50px'> 
+                  <tr>
+                      <td *ngFor="let image of imgsrc" >
+                      <input type="image"  style="height: 150px;" src={{image.src}}>
+                    </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <form  (ngSubmit)="upload()" >
+                          <input matinput  type='file' (change)="onSelectFile($event)"><br>
+                          <img [src]="url" height="200"> <br/>
+                          <button mat-raised-button >Upload</button>
+                          </form>
+                    </tr>
+                    </table>
+                    <br><br><br>
+                    </div>
+                    <div style="text-align: center">
+                        <button  mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+                    </div>
+                    <br><br>
+                </mat-step>
+                <mat-step [stepControl]="firstFormGroup">
+                  <form [formGroup]="firstFormGroup" (ngSubmit)="firstpage()" >
+                    <ng-template matStepLabel>Persional and Professional Detials</ng-template>
+                    <div class="row">
+                      <div class="col-lg-8 offset-lg-2">
+                        <table cellpadding='20px'>
+<!-- inserted data --><tr><td>
+                        ProfileFor:</td>
+  <td> <mat-form-field >
+    <mat-select formControlName="ProfileFor" placeholder="ProfileFor">
+    <mat-option value="Myself">Myself</mat-option>
+    <mat-option value="Daughter">Daughter</mat-option>
+    <mat-option value="Son">Son</mat-option>
+    <mat-option value="Brother">Brother</mat-option>
+    <mat-option value="Sister">Sister</mat-option>
+    <mat-option value="Relative">Relative</mat-option>
+    <mat-option value="Friend">Friend</mat-option>  
+    </mat-select>
+</mat-form-field>
+</td>  
+</tr>
+<br>
+<tr>
+  <td>
+ Name:</td><td><mat-form-field>
+ <input formControlName="Name" matInput placeholder="Name">
+</mat-form-field>
+</td></tr>
+<tr><td>Gender:</td><td><mat-form-field>
+<mat-select formControlName="Gender" placeholder="Gender">
+<mat-option value="Male">Male</mat-option>
+<mat-option value="Female">Female</mat-option>  
+</mat-select>
+</mat-form-field>
+</td></tr>
+<tr><td>
+DOB:</td><td><mat-form-field>
+<input matInput formControlName="DOB" [matDatepicker]="picker" placeholder="DoB">
+<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+</td></tr>
+<!-- <tr><td>
+ProfilePic:            
+</td><td><input  #myInput type="file"  formControlName="Image"  placeholder="File Name" id="Image" accept="Image/*,.png,.jpg" (change)="readUrl($event)">
+
+<img [src]="url" style="height: 100px;width: 100px" webkitRelativePath >
+<a  color="primary" style="border: 10px" (click)="clear($event)" >Clear</a>
+</td></tr> -->
+<tr><td>
+Religion:</td>
+<td><mat-form-field>
+<mat-select formControlName="Religion" placeholder="Religion">
+<mat-option value="Hindu">Hindu</mat-option>
+<mat-option value="Muslim-Shia">Muslim-Shia</mat-option>
+<mat-option value="Muslim-Sunni">Muslim-Sunni</mat-option>
+<mat-option value="Muslim-Others">Muslim-Others</mat-option>
+<mat-option value="Christian">Christian</mat-option>
+<mat-option value="Sikh">Sikh</mat-option>
+<mat-option value="Jain-Digambar">Jain-Digambar</mat-option>
+<mat-option value="Jain-Shwethambar">Jain-Shwethambar</mat-option>
+<mat-option value="Jain-Others">Jain-Others</mat-option>
+<mat-option value="Parsi">Parsi</mat-option>
+<mat-option value="Budhist">Budhist</mat-option>
+<mat-option value="Inter-Religion">Inter-Religion</mat-option>  
+</mat-select>
+</mat-form-field>
+</td></tr>
+<tr><td>
+Mother-Tongue:
+</td><td>
+<mat-form-field>
+<mat-select formControlName="MotherTongue" placeholder="Mother-Tongue" >
+<mat-option *ngFor="let language of languages" value="{{language.value}}">{{language.viewValue}}</mat-option>
+</mat-select>
+</mat-form-field>
+</td></tr>
+<tr><td>
+Phone:</td>
+<td><mat-form-field>    
+<input formControlName="Phone" matInput placeholder="Phone">
+</mat-form-field>
+</td></tr>
+<tr><td>EmailId:</td><td><mat-form-field>
+<input formControlName="EmailId" matInput placeholder="EmailID">
+</mat-form-field></td></tr>
+
+<!-- <tr><td> -->
+<!-- Password:</td><td><mat-form-field>
+<input formControlName="Password" type="password" matInput placeholder="Password">
+</mat-form-field></td></tr>    -->
+<!-- <button type="submit" mat-raised-button color="primary" [disabled]="!RegisterForm.valid"  >Submit</button> -->
+<!-- inserted data -->
+
+                          <tr>
+                            <td> MaritalStatus:</td>
+                            <td>
+                              <mat-radio-group  formControlName="MaritalStatus" >
+                                <mat-radio-button   value="nevermarried">NeverMarried</mat-radio-button>&nbsp;
+                                <mat-radio-button   value="Widowed">Widowed</mat-radio-button>
+                                <mat-radio-button   value="Divorced">Divorced</mat-radio-button>
+                                <mat-radio-button  value="AwatingDivorce">AwatingDivorce</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Height:</td>
+                            <td>
+                              <mat-form-field  >
+                                <mat-select formControlName="Height" placeholder="Select">
+                                  <mat-option *ngFor="let Height of Heights" value="{{Height.value}}">{{Height.viewValue}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>FamilyStatus:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="FamilyStatus" placeholder="Select">
+                                  <mat-option value="MiddleClass">MiddleClass</mat-option>
+                                  <mat-option value="AboveMiddleClass">AboveMiddleClass</mat-option>
+                                  <mat-option value="Rich">Rich</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>FamilyType:</td>
+                            <td>
+                              <mat-radio-group formControlName="FamilyType">
+                                <mat-radio-button value="Joint">Joint</mat-radio-button>
+                                &nbsp; <mat-radio-button value="Neutral">Neutral</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>FamilyValues:</td>
+                            <td>
+                              <mat-radio-group formControlName="FamilyValues">
+                                <mat-radio-button value="Orthodox">Orthodox</mat-radio-button>&nbsp;
+                                <mat-radio-button value="Traditional">Traditional</mat-radio-button>
+                                <mat-radio-button value="Moderate">Moderate</mat-radio-button>
+                                <mat-radio-button value="Liberal">Liberal</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>PhysicallyHandicapped:</td>
+                            <td>
+                              <mat-radio-group formControlName="PhysicallyHandicapped">
+                                <mat-radio-button value="yes">Yes</mat-radio-button>&nbsp;
+                                <mat-radio-button value="no">No</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Education:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="Education" placeholder="Select">
+                                  <mat-option value="B.E">B.E</mat-option>
+                                  <mat-option value="B.Tech">B.Tech</mat-option>
+                                  <mat-option value="B.Sc">B.Sc</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Employed In:</td>
+                            <td>
+                              <mat-radio-group formControlName="EmployedIn">
+                                <mat-radio-button value="Private">Private</mat-radio-button>&nbsp;
+                                <mat-radio-button value="Government">Government</mat-radio-button>
+                                <mat-radio-button value="Business">Business</mat-radio-button>
+                                <mat-radio-button value="Self-Employed">Self-Employed</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Occupation:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="Occupation" placeholder="Select">
+                                  <mat-option value="SoftwareProfessional">SoftwareProfessional</mat-option>
+                                  <mat-option value="FinanceProfessional">FinanceProfessional</mat-option>
+                                  <mat-option value="Lecturer">Lecturer</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>AnnualIncome:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="AnnualIncome" placeholder="Select">
+                                  <mat-option value="0-1lakhs">0-1lakhs</mat-option>
+                                  <mat-option value="1-2lakhs">1-2lakhs</mat-option>
+                                  <mat-option value="2-3lakhs">2-3lakhs</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td> Work Location:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="LocationCountry" placeholder="Select">
+                                  <mat-option value="India">India</mat-option>
+                                  <mat-option value="Usa">Usa</mat-option>
+                                  <mat-option value="China">China</mat-option>
+                                </mat-select>
+                              </mat-form-field>&nbsp;
+                              <mat-form-field>
+                                <mat-select   formControlName="LocationState" placeholder="Select">
+                                  <mat-option value="AndhraPradesh">AndhraPradesh</mat-option>
+                                  <mat-option value="Maharashtra">Gujarat</mat-option>
+                                  <mat-option value="Canada">Canada</mat-option>
+                                  <mat-option value="NewYork">NewYork</mat-option>
+                                  <mat-option value="Shandong">Shandong</mat-option>
+                                </mat-select>
+                              </mat-form-field>&nbsp;
+                              <mat-form-field >
+                                <mat-select formControlName="LocationCity" placeholder="Select">
+                                  <mat-option value="Vijayawada">Vijayawada</mat-option>
+                                  <mat-option value="Mumbai">Mumbai</mat-option>
+                                  <mat-option value="Toronto">Toronto</mat-option>
+                                  <mat-option value="Binghamton">Binghamton</mat-option>
+                                  <mat-option value="Yantai">Yantai</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div style="text-align: center;">
+                      <button mat-raised-button color="primary"  >Save</button>
+                      <button  mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+                    </div>
+                  </form>
+                  <!-- <div style="text-align: center;margin-left: 220px"> 
+                  <button  mat-raised-button color="primary" matStepperNext>Next</button>
+                </div> -->
+                  <br><br>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup">
+                  <form [formGroup]="secondFormGroup" (ngSubmit)="secondpage()">
+                    <ng-template matStepLabel>BasicInformation</ng-template>
+                    <div class="row">
+                      <div class="col-lg-8 offset-lg-2">
+                        <table cellpadding='20px'>
+                          <tr>
+                            <td>BodyType:</td>
+                            <td>
+                              <mat-radio-group formControlName="BodyType">
+                                <mat-radio-button value="slim">Slim</mat-radio-button>&nbsp;
+                                <mat-radio-button value="athletic">Athletic</mat-radio-button>
+                                <mat-radio-button value="average">Average</mat-radio-button>
+                                <mat-radio-button value="heavy">Heavy</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Weight:</td>
+                            <td>
+                              <mat-form-field >
+                                <input matInput formControlName="Weight" placeholder="Weight">
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <!-- <tr>
+                            <td>Education:</td>
+                            <td>
+                              <mat-form-field>
+                                <input matInput placeholder="Education">
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Occupation:</td>
+                            <td>
+                              <mat-form-field>
+                                <input matInput placeholder="Occupation">
+                              </mat-form-field>
+                            </td>
+                          </tr> -->
+                          <tr>
+                            <td>Eating:</td>
+                            <td>
+                              <mat-radio-group formControlName="Diet">
+                                <mat-radio-button value="veg">Vegeterian</mat-radio-button>&nbsp;
+                                <mat-radio-button value="nonveg">Non-Vegeterian</mat-radio-button>
+                                <mat-radio-button value="eggeterian">Eggeterian</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Smoking:</td>
+                            <td>
+                              <mat-radio-group formControlName="SmokingHabit">
+                                <mat-radio-button value="no">Never</mat-radio-button>&nbsp;
+                                <mat-radio-button value="Socially">Socially</mat-radio-button>
+                                <mat-radio-button value="yes">Always</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Drinking:</td>
+                            <td>
+                              <mat-radio-group formControlName="DrinkingHabit">
+                                <mat-radio-button value="no">Never</mat-radio-button>&nbsp;
+                                <mat-radio-button value="socially">Socially</mat-radio-button>
+                                <mat-radio-button value="yes">Always</mat-radio-button>
+                              </mat-radio-group>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Star:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="Star" placeholder="Star">
+                                  <mat-option *ngFor="let star of Stars" value="{{star.value}}">{{star.viewValue}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Rasi:</td>
+                            <td>
+                              <mat-form-field >
+                                <mat-select formControlName="Rasi" placeholder="Rasi">
+                                  <mat-option *ngFor="let rasi of Rasichakra" value="{{rasi.value}}">{{rasi.viewValue}}</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Time of Birth:</td>
+                            <td>
+                              <mat-form-field >
+                                <input matInput formControlName="TimeOfBirth" type="time" atp-time-picker>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Place of Birth:</td>
+                            <td>
+                              <mat-form-field > 
+                                <mat-select formControlName="PlaceOfBirthCountry" placeholder="Country">
+                                  <mat-option value="India">India</mat-option>
+                                  <mat-option value="Usa">Usa</mat-option>
+                                  <mat-option value="China">China</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              <mat-form-field >
+                                <mat-select formControlName="PlaceOfBirthState" placeholder="States">
+                                  <mat-option value="AndhraPradesh">AndhraPradesh</mat-option>
+                                  <mat-option value="Maharashtra">Gujarat</mat-option>
+                                  <mat-option value="Canada">Canada</mat-option>
+                                  <mat-option value="NewYork">NewYork</mat-option>
+                                  <mat-option value="Shandong">Shandong</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              <mat-form-field >
+                                <mat-select formControlName="PlaceOfBirthCity" placeholder="City">
+                                  <mat-option value="Vijayawada">Vijayawada</mat-option>
+                                  <mat-option value="Mumbai">Mumbai</mat-option>
+                                  <mat-option value="Toronto">Toronto</mat-option>
+                                  <mat-option value="Binghamton">Binghamton</mat-option>
+                                  <mat-option value="Yantai">Yantai</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div style="text-align: center;">
+                      <button mat-raised-button color="primary">Save</button>
+                      <button mat-raised-button color="primary" type="button" matStepperPrevious>Back</button>
+                      <button mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+                    </div><br><br>
+                  </form>
+                </mat-step>
+                <mat-step [stepControl]="thirdFormGroup">
+                  <ng-template matStepLabel>Family Information</ng-template>
+                  <form [formGroup]="thirdFormGroup" (ngSubmit)="thirdpage()" >
+                  <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                      <table cellpadding='20px'>
+                       
+                        <tr>
+                          <td>Father Occupation:</td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select formControlName="FatherOccupation" placeholder="Select">
+                                <mat-option value="Employed">Employed</mat-option>
+                                <mat-option value="UnEmployed">UnEmployed</mat-option>
+                                <mat-option value="Business">Business</mat-option>
+                                <mat-option value="Agriculture">Agriculture</mat-option>
+                                <mat-option value="Self-Employed">Self-Employed</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Mother Occupation:</td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select formControlName="MotherOccupation" placeholder="Select">
+                                <mat-option value="Home-Maker">Home-Maker</mat-option>
+                                <mat-option value="Employed">Employed</mat-option>
+                                <mat-option value="UnEmployed">UnEmployed</mat-option>
+                                <mat-option value="Business">Business</mat-option>
+                                <mat-option value="Agriculture">Agriculture</mat-option>
+                                <mat-option value="Self-Employed">Self-Employed</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Brothers:</td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select formControlName="Brothers" placeholder="Select">
+                                <mat-option value="0">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Brothers Married:</td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select formControlName="BrothersMarried" placeholder="Select">
+                                <mat-option value="0">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sisters:</td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select formControlName="Sisters" placeholder="Select">
+                                <mat-option value="0">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sisters Married:</td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select formControlName="SistersMarried" placeholder="Select">
+                                <mat-option value="0">none</mat-option>
+                                <mat-option value="1">1</mat-option>
+                                <mat-option value="2">2</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Parents Contact:</td>
+                          <td>
+                            <mat-form-field>
+                              <input formControlName="ParentsContact" matInput placeholder="PhoneNo">
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Ancestral Origin:</td>
+                          <td>
+                            <mat-form-field>
+                              <input formControlName="AncestralOrigin" matInput placeholder="Place">
+                            </mat-form-field>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div style="text-align: center;">
+                    <button mat-raised-button color="primary"  >Save</button>
+                    <button mat-raised-button color="primary" type="button" matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+                  </div>
+                  </form>
+                  <br><br>
+                </mat-step>
+                <!-- <mat-step> -->
+                  <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                   <br><br> You are now done.<br><br><br>
+                    <button mat-raised-button color="primary" (click)="formSubmit()" >Save&Submit</button>
+                    <button mat-raised-button color="primary" type="button" matStepperPrevious>Back</button>
+                    <button mat-raised-button color="primary" type="button" (click)="stepper.reset()">Reset</button>
+                </mat-step>
+              </mat-horizontal-stepper>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+      

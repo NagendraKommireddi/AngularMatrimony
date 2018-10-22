@@ -1,0 +1,98 @@
+<section *ngIf="location.path()!=='/userpage'" style="display: block">
+<mat-toolbar  style="background:rgb(240, 107, 129)" >
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSD-BPr8-Gk7hguYOcEwvMKoEgizyG0GBrpOXuiI7ZSiitB1Y" width="50px" height="50px">
+ <div>
+   <h4>
+    Matrimony
+ </h4>
+  </div>
+  <!-- <div  *ngIf="location.path()!=='/home' && location.path()!=='/forget'&&location.path()!=='/userpage'&&location.path()!=='/otp'"> -->
+      <!-- <button  mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/home">Home</a>
+        <a mat-menu-item routerLink="/register">Register</a>  
+        <a mat-menu-item routerLink="/preference">PartnerPreferences</a> 
+        <a mat-menu-item routerLink="/payment">Payment</a>   
+        <a  mat-menu-item routerLink="/userpage" >Userpage</a>
+      </mat-menu> -->
+      <div style="margin-left: 20px" *ngIf="location.path()!=='/home' && location.path()!=='/forget'&&location.path()!=='/userpage'&&location.path()!=='/otp'" > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('register')" >Register</button>
+      </div> 
+      <div *ngIf="location.path()!=='/home' && location.path()!=='/forget'&&location.path()!=='/userpage'&&location.path()!=='/otp'" > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('preference')" > Preference </button>
+      </div>
+      <div *ngIf="location.path()!=='/home' && location.path()!=='/forget'&&location.path()!=='/userpage'&&location.path()!=='/otp'" > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('payment')" > Payment </button>
+      </div>
+      <div *ngIf="location.path()!=='/home' && location.path()!=='/forget'&&location.path()!=='/userpage'&&location.path()!=='/otp'" > <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('userpage')" > UserPage </button>
+      </div>
+
+  <div  *ngIf="location.path()==='/register'" >
+        <a routerLink="/preference" style="margin-left:550px " >Skip</a>
+  </div> 
+    <div *ngIf="location.path()==='/preference'" >
+     <a routerLink="/payment" style="margin-left:550px " >Skip</a>
+    </div> 
+    <div *ngIf="location.path()==='/payment'" >
+    <a routerLink="/userpage" style="margin-left:550px " >Skip</a>
+    </div> 
+  <div *ngIf="location.path()==='/forget'||location.path()==='/otp'">
+     <button mat-button style="background:rgb(240, 107, 129)" (click)="navigations('home')" > Home </button>
+  </div> 
+
+
+<div *ngIf="location.path()!=='/home'&&location.path()!=='/forget'&&location.path()!=='/otp'&&location.path()!=='/notification' ">
+ <button style="margin-left:10px "  mat-button [matMenuTriggerFor]="UpdateProfile">
+        {{name}}<mat-icon>account_box keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #UpdateProfile="matMenu">
+   <a *ngIf="location.path()==='/userpage'" mat-menu-item routerLink="/register">UpdateProfile</a>
+      <!-- <a mat-menu-item routerLink="/payment">Packages</a> -->
+      <a mat-menu-item routerLink="/home" (click)="logout()">Logout</a>    
+    </mat-menu>
+  </div>
+  <div *ngIf="location.path()==='/notification' ">
+    <button style="margin-left:660px "  mat-button [matMenuTriggerFor]="UpdateProfile">
+           {{name}}<mat-icon>account_box keyboard_arrow_down</mat-icon>
+       </button>
+       <mat-menu #UpdateProfile="matMenu">
+      <a *ngIf="location.path()==='/userpage'" mat-menu-item routerLink="/register">UpdateProfile</a>
+         <!-- <a mat-menu-item routerLink="/payment">Packages</a> -->
+         <a mat-menu-item routerLink="/home" (click)="logout()">Logout</a>    
+       </mat-menu>
+     </div>
+      <!-- </div> -->
+      <!-- <div style="margin-left: 100px" *ngIf="location.path()==='/userpage'">
+            <button mat-button > Messages</button>
+            <button style="margin-left: 710px"  mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>account_box keyboard_arrow_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <a mat-menu-item routerLink="/register">UpdateProfile</a>
+              <a mat-menu-item routerLink="/payment">Packages</a>
+              <a mat-menu-item routerLink="/home" (click)="logout()">Logout</a>    
+            </mat-menu>
+      </div> -->
+
+
+<!-- <div style="margin-left: 950px">
+     
+      <button mat-button [matMenuTriggerFor]="menu"
+        matTooltip  = "For Details Contact INDIA : 0-8144-99-88-77"
+      
+        aria-label="Button that displays a tooltip when focused or hovered over">
+     Help
+    </button>
+</div> -->
+
+</mat-toolbar>
+</section>
+<!-- header ends here -->
+<router-outlet></router-outlet>
+<!-- footer starts here -->
+<section class="footer">
+<mat-toolbar style="background: blueviolet">
+        <div  >
+          <p style="margin-left: 400px" >
+            Copyrights2018 ,Matrimony All Rights Reserved
+          </p>
+        </div>
+</mat-toolbar>
+</section>

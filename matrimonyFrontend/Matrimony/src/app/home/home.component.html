@@ -1,0 +1,105 @@
+<section>
+  <div class="row">
+    <div class="col-lg-6" style="background: url('https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?cs=srgb&dl=fashion-man-couple-256737.jpg&fm=jpg');background-size: 700px 760px ;height: 760px;">
+    </div>
+    <div class="col-lg-6" style="background:lightgrey;" ><br>
+      <mat-tab-group>  
+            <mat-tab label="Login">
+                <form [formGroup]="LoginForm" (submit)="Login()">
+                <mat-form-field>
+                  <input  formControlName="UserName" id="UserName" matInput placeholder="UserName" >
+                  </mat-form-field><br>
+                  <mat-form-field>
+                      <input  formControlName="password" id="password" type="password" matInput placeholder="Password" >
+                  </mat-form-field><br>
+                  <button type="submit" mat-raised-button [disabled]="!LoginForm.valid" color="primary">Submit</button> |                   
+              <a routerLink="/otp" style="color:maroon">forget password?</a>
+            </form>
+            </mat-tab>
+          
+             <mat-tab label="Register">
+            <form [formGroup]="RegisterForm"  (submit)="Submit()">
+              <h4>Register YourSelf</h4>
+              ProfileFor: <mat-form-field >
+                          <mat-select formControlName="ProfileFor" placeholder="ProfileFor">
+                          <mat-option value="Myself">Myself</mat-option>
+                          <mat-option value="Daughter">Daughter</mat-option>
+                          <mat-option value="Son">Son</mat-option>
+                          <mat-option value="Brother">Brother</mat-option>
+                          <mat-option value="Sister">Sister</mat-option>
+                          <mat-option value="Relative">Relative</mat-option>
+                          <mat-option value="Friend">Friend</mat-option>  
+                          </mat-select>
+              </mat-form-field>  
+              <br>
+              Name:<mat-form-field>
+              <input formControlName="Name" matInput placeholder="Name">
+              </mat-form-field>
+              <br>
+              Gender:<mat-form-field>
+              <mat-select formControlName="Gender" placeholder="Gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>  
+              </mat-select>
+              </mat-form-field>
+              <br>
+              DOB:<mat-form-field>
+              <input matInput formControlName="DOB" [matDatepicker]="picker" placeholder="DoB">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <br>
+              ProfilePic:            
+              <input  #myInput type="file"  formControlName="Image"  placeholder="File Name" id="Image" accept="Image/*,.png,.jpg" (change)="readUrl($event)">
+              <!-- <input type='file' (change)="readUrl($event)" accept="image/*">-->
+              <img [src]="url" style="height: 100px;width: 100px" webkitRelativePath >
+              <a  color="primary" style="border: 10px" (click)="clear($event)" >Clear</a>
+                <br>
+              Religion:<mat-form-field>
+              <mat-select formControlName="Religion" placeholder="Religion">
+              <mat-option value="Hindu">Hindu</mat-option>
+              <mat-option value="Muslim-Shia">Muslim-Shia</mat-option>
+              <mat-option value="Muslim-Sunni">Muslim-Sunni</mat-option>
+              <mat-option value="Muslim-Others">Muslim-Others</mat-option>
+              <mat-option value="Christian">Christian</mat-option>
+              <mat-option value="Sikh">Sikh</mat-option>
+              <mat-option value="Jain-Digambar">Jain-Digambar</mat-option>
+              <mat-option value="Jain-Shwethambar">Jain-Shwethambar</mat-option>
+              <mat-option value="Jain-Others">Jain-Others</mat-option>
+              <mat-option value="Parsi">Parsi</mat-option>
+              <mat-option value="Budhist">Budhist</mat-option>
+              <mat-option value="Inter-Religion">Inter-Religion</mat-option>  
+              </mat-select>
+              </mat-form-field>
+              <br>
+              Mother-Tongue:<mat-form-field>
+              <mat-select formControlName="MotherTongue" placeholder="Mother-Tongue" >
+                    <mat-option *ngFor="let language of languages" value="{{language.value}}">{{language.viewValue}}</mat-option>
+              </mat-select>
+              </mat-form-field>
+              <br>
+              Phone:<mat-form-field>    
+              <input formControlName="Phone" matInput placeholder="Phone">
+              </mat-form-field>
+              <br>
+              EmailId:<mat-form-field>
+              <input formControlName="EmailId" matInput placeholder="EmailID">
+              </mat-form-field>
+              <br>
+              Password:<mat-form-field>
+              <input formControlName="Password" type="password" matInput placeholder="Password">
+              </mat-form-field>   
+              <br>
+              <button type="submit" mat-raised-button color="primary" [disabled]="!RegisterForm.valid"  >Submit</button>
+            <br><br>
+          
+         </form>
+         </mat-tab>
+        </mat-tab-group>
+
+<br>
+
+    </div>
+    
+  </div>
+</section>

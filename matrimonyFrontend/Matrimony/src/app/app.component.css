@@ -1,0 +1,35 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+h4{
+    font-weight: bold;
+    font-size: 22px;
+    color:blanchedalmond;
+
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 100px;
+    top:610px;
+    width: 100%;
+    text-align: center;
+ }
+ .header {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+ }
+ ::ng-deep .tooltip {
+    background-color: red;
+    color: blue;
+    font-size: 20px;
+  }
+  mat-menu{
+      background-color: transparent;
+  }

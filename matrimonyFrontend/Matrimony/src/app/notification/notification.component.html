@@ -1,0 +1,24 @@
+<mat-card   *ngFor="let user of users" class="person-card" >
+    <mat-grid-list  cols="8" rowHeight="3:1" style="background-color: lightblue;" >
+      <mat-grid-tile [rowspan]="4" [colspan]="2">
+        
+        <div style="display: block">
+            <img [src]="user.Image" style="height: 100px;width: 100px" /><br><br>
+        </div>                
+      </mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2">Profilefor:{{user.Profilefor}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2"> Name: {{user.Name}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2" > DOB:{{user.DOB}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2" >EmailId: {{user.EmailId}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2">Gender:{{user.Gender}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2"> MotherTongue:{{user.MotherTongue}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2" >Phone:  {{user.Phone}}</mat-grid-tile>
+      <mat-grid-tile [rowspan]="1" [colspan]="2">Religion: {{user.Religion}}</mat-grid-tile>
+        <!-- <mat-grid-tile [colspan]="2">Salary</mat-grid-tile>
+        <mat-grid-tile [colspan]="2">Mother Tongue</mat-grid-tile>
+        <mat-grid-tile [colspan]="2">Marrital Status</mat-grid-tile>
+        -->
+    </mat-grid-list>
+    <!-- <mat-card>
+    </mat-card> -->
+  </mat-card>

@@ -1,0 +1,32 @@
+<div style="background: url('https://wallpaper-house.com/data/out/6/wallpaper2you_131255.jpg');background-size: 100% 100%;height: 700px; ">
+  <form  [formGroup]="OtpForm">
+<div  style="margin-left: 500px;margin-right: 400px;padding-bottom:30px; width: 400px; padding: 50px;">
+<!-- <mat-card style="width: 400px"> -->
+  <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>PhoneNo</mat-label>
+      <input formControlName="PhoneNo"   id="textbox" matInput placeholder="PhoneNo" >
+    </mat-form-field>
+  <!-- </mat-card> -->
+  <br>
+    <!-- <mat-card style="width: 400px"> -->
+        <button style="align-self: center" color="primary" mat-raised-button [disabled]="count!==0" (click) ="GenerateOtp()" >Generate OTP</button>
+    <!-- </mat-card> -->
+
+    <button style="align-self: center" color="primary" mat-raised-button [disabled]="count===0" (click) ="GenerateOtp()" >Resend OTP</button>
+    <br>
+<!-- <mat-card style="width: 400px"> -->
+    
+  <br>
+  <mat-form-field appearance="outline" style="width: 300px">
+        <mat-label>OTP</mat-label>
+      <input formControlName="Otp"  id="Otp" [readonly]="counter===0"  id="textbox" matInput placeholder="OTP" >
+    </mat-form-field>&nbsp;
+      {{countDown | async }}
+  <!-- </mat-card> -->
+  <br>
+    <!-- <mat-card style="width: 400px"> -->
+        <button style="align-self: center" color="primary" [disabled]="!OtpForm.valid" mat-raised-button (click) ="Submit()" >Verify</button>
+    <!-- </mat-card> -->
+</div>
+</form>
+</div>
